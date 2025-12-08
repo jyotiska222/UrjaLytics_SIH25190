@@ -63,6 +63,9 @@ const Uploads = (props) => {
 
   // new form states for the upload card
   const [transformerId, setTransformerId] = useState("");
+  const [transformerMake, setTransformerMake] = useState("");
+  const [primaryVoltageRating, setPrimaryVoltageRating] = useState("");
+  const [secondaryVoltageRating, setSecondaryVoltageRating] = useState("");
   const [uploadDate, setUploadDate] = useState("");
   const [fileType, setFileType] = useState("");
   const [confirmUpload, setConfirmUpload] = useState(false);
@@ -452,7 +455,41 @@ const Uploads = (props) => {
                           {/* <option value="csv">CSV</option> */}
                         </select>
                       </div>
+
+                      {/* Transformer Make */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Transformer Make</label>
+                        <input
+                          type="text"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          placeholder="e.g. Siemens"
+                          value={transformerMake}
+                          onChange={(e) => setTransformerMake(e.target.value)}
+                        />
+                      </div>
+
+                      {/* Primary Voltage Rating */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Primary Voltage Rating</label>
+                        <input
+                          type="text"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          value={primaryVoltageRating}
+                          onChange={(e) => setPrimaryVoltageRating(e.target.value)}
+                        />
+                      </div>
+                      {/* Secondary Voltage Rating */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Secondary Voltage Rating</label>
+                        <input
+                          type="text"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          value={secondaryVoltageRating}
+                          onChange={(e) => setSecondaryVoltageRating(e.target.value)}
+                        />
+                      </div>
                     </div>
+                    
 
                     {/* File input row */}
                     <div className="mt-4 flex items-center gap-3">
@@ -591,10 +628,10 @@ const Uploads = (props) => {
                   )}
                 </div>
 
-                <div className="mt-4 text-xs text-gray-500 flex items-center gap-2">
+                {/* <div className="mt-4 text-xs text-gray-500 flex items-center gap-2">
                   <Clock className="w-4 h-4" />
                   Tip: Use the search box to quickly find a recent test.
-                </div>
+                </div> */}
               </div>
             </aside>
           </div>
